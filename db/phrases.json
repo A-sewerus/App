@@ -1,0 +1,12 @@
+[
+    {"ru": "Не желаете ли чашечку чая?", "en": "Would you like a cup of tea?", "points": 1
+    },
+    {"ru": "Рекомендую вам избегать некоторых районов в нашем городе", "en": "I recommend you to avoid some neiborhoods in our city", "points": 2
+    },
+    {"ru": "Почему бы тебе не прийти завтра на нашу вечеринку?", "en": "Why don’t you come to our party tomorrow?", "points": 3
+    },
+    {"ru": "Где твои друзья, когда они нужны тебе?", "en": "Where are your friends when you need them?", "points": 4
+    },
+    {"ru": "Так чем вы заняты на следующей неделе?", "en": "So what are you doing next weekend?", "points": 5
+    }
+]

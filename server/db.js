@@ -1,4 +1,3 @@
-'use strict'
 var fs = require('fs');
 var listPhrases = [];
 
@@ -11,11 +10,14 @@ function readPhrases(filename, callback) {
 }
 
 function randomIndex(max) {
-    return Math.floor(Math.random() * (max + 1));
+    return Math.floor(Math.random() * (max - 1));
 }
 
-function getRandomPhrase(listPhrases) {
-    return listPhrases[randomIndex(listPhrases.length)]
+function getRandomPhrase() {
+    return listPhrases[randomIndex(listPhrases.length)];
 }
 
-module.exports = { readPhrases: readPhrases, getRandomPhrase: getRandomPhrase }
+module.exports = {
+    readPhrases: readPhrases,
+    getRandomPhrase: getRandomPhrase
+}

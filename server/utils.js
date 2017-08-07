@@ -1,3 +1,5 @@
+const db = require('./db')
+
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * i);
@@ -12,6 +14,17 @@ function randomPhrase(obj) {
     let arr = obj.en.split(' ');
     return { id: obj.id, en: shuffleArray(arr), ru: obj.ru };
 }
+
+function checkAnswer(obj) {
+    var index = obj.id;
+    if (obj.answer === db.listPhrases[index].en) {
+        return db.listPhrases[index].points;
+    } else {
+        return 0;
+    }
+}
+
+
 
 module.exports = {
     randomPhrase: randomPhrase

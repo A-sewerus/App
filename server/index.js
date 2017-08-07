@@ -1,15 +1,20 @@
-'use strict'
-var express = require('express');
-var app = express();
-
+const express = require('express');
+const app = express();
+const db = require('./db')
+const utils = require('./utils')
 
 app.use(express.static('../public'));
 
 function init() {
-  readPhrases('../db/phrases.json', function (err) {
-    if (err) return console.log(err)
+  db.readPhrases('../db/phrases.json', function (err) {
+    if (err) return console.log(err);
+
     app.listen(3000, function () {
       console.log('Example app listening on port 3000!');
     })
+    //db.getRandomPhrase()
+    //console.log(utils.randomEngPhrase(db.getRandomPhrase()));
+    utils.randomPhrase(db.getRandomPhrase())
   })
 }
+init();

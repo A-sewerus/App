@@ -8,12 +8,11 @@ function shuffleArray(array) {
     return array;
 }
 
-function randomEngPhrase(obj) {
+function randomPhrase(obj) {
     let arr = obj.en.split(' ');
-    let randomArr = shuffleArray(arr)
-    return randomArr;
+    return shuffleArray(arr);
 }
 
 module.exports = {
-    randomEngPhrase: randomEngPhrase
+    randomPhrase: randomPhrase
 }

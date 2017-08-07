@@ -14,7 +14,7 @@ function init() {
     })
     //db.getRandomPhrase()
     //console.log(utils.randomEngPhrase(db.getRandomPhrase()));
-    utils.randomEngPhrase(db.getRandomPhrase())
+    utils.randomPhrase(db.getRandomPhrase())
   })
 }
 init();

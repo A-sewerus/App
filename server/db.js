@@ -14,7 +14,8 @@ function randomIndex(max) {
 }
 
 function getRandomPhrase() {
-    return listPhrases[randomIndex(listPhrases.length)];
+    var i = randomIndex(listPhrases.length);
+    return { id: i, en: listPhrases[i].en, ru: listPhrases[i].ru };
 }
 
 module.exports = {

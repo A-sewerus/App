@@ -10,7 +10,7 @@ function shuffleArray(array) {
 
 function randomPhrase(obj) {
     let arr = obj.en.split(' ');
-    return shuffleArray(arr);
+    return { id: obj.id, en: shuffleArray(arr), ru: obj.ru };
 }
 
 module.exports = {

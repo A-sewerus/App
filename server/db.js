@@ -8,6 +8,9 @@ function readPhrases(filename, callback) {
                 callback()
         })
 }
+function getPhrases() {
+        return listPhrases;
+}
 
 function randomIndex(max) {
         return Math.floor(Math.random() * (max - 1));
@@ -20,5 +23,6 @@ function getRandomPhrase() {
 
 module.exports = {
         readPhrases: readPhrases,
-        getRandomPhrase: getRandomPhrase
+        getRandomPhrase: getRandomPhrase,
+        getPhrases: getPhrases
 }

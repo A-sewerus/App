@@ -10,15 +10,13 @@ function initRoutes() {
         router.use(bodyParser.json());
         router.use(bodyParser.urlencoded({ extended: true }));
 
-        // router.get('/task', function (req, res) {
-        //         res.send(utils.randomPhrase(db.getRandomPhrase()));
-        // });
-        // return router;
-
         router.post('/answer', upload.array(), function (req, res) {
                 var userAnswer = { id: req.body[0].id, answer: req.body[0].answer }
-                //console.log(userAnswer);
                 res.send(utils.checkAnswer(userAnswer));
+        });
+
+        router.get('/task', function (req, res) {
+                res.send(utils.randomPhrase(db.getRandomPhrase()));
         });
         return router;
 }

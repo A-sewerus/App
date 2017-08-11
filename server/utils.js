@@ -17,15 +17,17 @@ function randomPhrase(obj) {
 
 function checkAnswer(obj) {
         var index = obj.id;
-        if (obj.answer === db.listPhrases[index].en) {
-                return db.listPhrases[index].points;
+        var listPhrases = db.getPhrases();
+        if (obj.answer === listPhrases[index].en) {
+                return listPhrases[index].points + "";
         } else {
-                return 0;
+                return "0";
         }
 }
 
 
 
 module.exports = {
-        randomPhrase: randomPhrase
+        randomPhrase: randomPhrase,
+        checkAnswer: checkAnswer
 }

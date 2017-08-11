@@ -8,7 +8,7 @@ const config = require('./config')
 app.use(express.static('../public'));
 app.use(routes.initRoutes());
 
-function init() {
+(function init() {
         db.readPhrases(config.db.path, function (err) {
                 if (err) return console.log(err);
 
@@ -16,5 +16,5 @@ function init() {
                         console.log('Example app listening on port ' + config.server.port + '!');
                 })
         })
-}
-init();
+})()
+

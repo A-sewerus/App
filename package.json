@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/A-sewerus/App#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "multer": "^1.3.0"
   },
   "devDependencies": {
     "webpack": "^3.4.1"

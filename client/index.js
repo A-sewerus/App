@@ -1,7 +1,9 @@
 $(document).ready(function () {
-        let phrase
-        let $wrapper = $('#test')
-        let $wrapperAnswer = $('#answer')
+        let phrase;
+        let $wrapper = $('#main');
+        let $wrapperRu = $('#ru');
+        let $wrapperReplyField = $('#replyField');
+        let $wrapperBtn = $('#answer')
 
         $.get("http://localhost:1020/task", handlerPhrase)
 
@@ -12,32 +14,16 @@ $(document).ready(function () {
         }
 
 
-        // function render(obj) {
-        //         const $ru = $("<div></div>").html(obj.ru);
-        //         const $answer = $("<div></div>");
-        //         $($answer).attr('id', 'answer');
-        //         $wrapper.append($ru).append($answer);
-        //         for (let i = 0; i < obj.en.length; i++) {
-        //                 const $en = $("<button></button>").html(obj.en[i]);
-        //                 $($en).attr('id', 'btn' + i);
-        //                 $($en).addClass('button');
-        //                 $wrapper.append($en);
-        //         }
-        //         return $wrapper
-        // }
-
         function render(obj) {
-                const $ru = $("<div></div>").html(obj.ru);
-                const $answer = $("<div></div>").html(obj.en[3]);
-                $($answer).attr('id', 'answer');
-                $wrapper.append($ru).append($answer);
+                $wrapperRu.html(obj.ru);
+                $wrapper.append($wrapperRu).append($wrapperReplyField).append($wrapperBtn)
                 return $wrapper
         }
 
 
-        console.log('lol');
         $('#answer').click(function (e) {
-                console.log('lol');
+                let word = $('#answer').text();
+                console.log(word);
         });
 
 })

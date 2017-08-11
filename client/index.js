@@ -16,10 +16,21 @@ $(document).ready(function () {
 
         function render(obj) {
                 $wrapperRu.html(obj.ru);
-                $wrapper.append($wrapperRu).append($wrapperReplyField).append($wrapperBtn)
+                $wrapper.append($wrapperRu).append($wrapperReplyField)
+                .append($wrapperBtn).append(renderPhrase(obj.en));
                 return $wrapper
         }
 
+        function renderPhrase(arr) {
+                let $ul = $('<ul></ul>');
+                for (let i = 0; i < arr.length; i++) {
+                        let $li = $('<li></li>');
+                        let $btn = $('<button></button>').html(arr[i]);
+                        $li.append($btn);
+                        $ul.append($li);
+                }
+                return $ul
+        }
 
         $('#answer').click(function (e) {
                 let word = $('#answer').text();

@@ -11,7 +11,7 @@ function initRoutes() {
         router.use(bodyParser.urlencoded({ extended: true }));
 
         router.post('/answer', upload.array(), function (req, res) {
-                var userAnswer = { id: req.body[0].id, answer: req.body[0].answer }
+                var userAnswer = { id: req.body.id, answer: req.body.answer }
                 res.send(utils.checkAnswer(userAnswer));
         });
 
